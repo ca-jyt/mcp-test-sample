@@ -1,0 +1,4 @@
+fastmcp==2.6.1
+fastapi
+uvicorn
+slack_sdk
