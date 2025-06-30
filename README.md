@@ -11,22 +11,22 @@
 ```mermaid
 graph TD
     subgraph "Slack Workspace"
-        User[ユーザー]
-        Bot[Slackボットアプリ]
+        User["ユーザー"]
+        Bot["Slackボットアプリ"]
     end
 
     subgraph "Google Cloud Platform (GCP)"
         subgraph "Cloud Run: mcp-client"
-            Client[FastAPI アプリ<br/>client.py]
+            Client["FastAPI アプリ<br/>client.py"]
         end
 
         subgraph "Cloud Run: mcp-tool-server"
-            Server[FastMCP アプリ<br/>server.py]
+            Server["FastMCP アプリ<br/>server.py"]
         end
 
         subgraph "GCP APIs & Services"
-            VertexAI[Vertex AI API<br/>(Gemini Pro)]
-            SecretManager[Secret Manager]
+            VertexAI["Vertex AI API<br/>(Gemini Pro)"]
+            SecretManager["Secret Manager"]
         end
     end
 
