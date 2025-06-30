@@ -37,15 +37,15 @@ graph TD
     VertexAI["Vertex AI API<br/>(Gemini Pro)"]
     SecretManager["Secret Manager"]
 
-    User -- "1. `@ボット <プロンプト>`" --> Bot
-    Bot -- "2. イベント通知 (POST)" --> Client
-    Client -- "3. Slack認証情報を読み込み" --> SecretManager
-    Client -- "4. `generate_reply` ツールを呼び出し" --> Server
-    Server -- "5. Vertex AIに応答生成を依頼" --> VertexAI
-    VertexAI -- "6. 生成テキストを返却" --> Server
-    Server -- "7. ツール結果を返却" --> Client
-    Client -- "8. Slack API経由でメッセージ投稿" --> Bot
-    Bot -- "9. ユーザーに応答を表示" --> User
+    User -- 1.@ボット <プロンプト>　--> Bot
+    Bot -- 2.イベント通知 (POST) --> Client
+    Client -- 3.Slack認証情報を読み込み --> SecretManager
+    Client -- "4.generate_reply ツールを呼び出し" --> Server
+    Server -- "5.Vertex AIに応答生成を依頼" --> VertexAI
+    VertexAI -- "6.生成テキストを返却" --> Server
+    Server -- "7.ツール結果を返却" --> Client
+    Client -- "8.Slack API経由でメッセージ投稿" --> Bot
+    Bot -- "9.ユーザーに応答を表示" --> User
 ```
 
 ## 事前準備
