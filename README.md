@@ -123,7 +123,7 @@ AI応答を生成するバックエンドサーバーをデプロイします。
       --set-env-vars="GCP_PROJECT=$GCP_PROJECT_ID" \
       --service-account=$SERVICE_ACCOUNT_EMAIL \
       --region asia-northeast1 \
-      --allow-unauthenticated
+      --no-allow-unauthenticated
     
     cd ..
     ```

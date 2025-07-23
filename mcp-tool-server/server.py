@@ -13,7 +13,7 @@ try:
     
     print(f"Initializing Vertex AI for project: {gcp_project}")
     vertexai.init(project=gcp_project, location="asia-northeast1")
-    chat_model = GenerativeModel("gemini-2.0-flash")
+    chat_model = GenerativeModel("gemini-1.5-pro-002")
     print("Vertex AI initialized successfully.")
 except Exception as e:
     print(f"FATAL: Failed to initialize Vertex AI: {e}", file=sys.stderr)
@@ -23,6 +23,7 @@ mcp = FastMCP("Gemini Tool Server")
 @mcp.tool()
 def generate_reply(prompt: str) -> str:
     """プロンプトに対してVertex AIで応答を生成します。"""
+    print(f":Check_right: [TOOL CALLED] prompt={prompt}")
     try:
         chat = chat_model.start_chat()
         resp = chat.send_message(prompt)
